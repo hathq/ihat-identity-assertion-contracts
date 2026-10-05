@@ -1,12 +1,17 @@
 [package]
-exclude = ["/registration/**", "/state/**", "/.local/**", "/.state/**", "/.data/**", "/secrets/**", "/credentials/**", "/.env", "/.env.production", "/.env.local", "/*.tgz", "/*.tar.gz", "/*.tar", "/*.zip", "/*.whl", "/*.crate", "/.ruff_cache/**", "/.mypy_cache/**", "/.tox/**", "/.nox/**", "/.hypothesis/**", "/.coverage", "/.coverage.*", "/htmlcov/**", "/lcov.info", "/junit.xml", "/*.profraw", "/*.profdata", "/*.egg-info/**", "/target/**", "/node_modules/**", "/dist/**", "/build/**", "/.cache/**", "/.pytest_cache/**", "/coverage/**"]
+include = ["Cargo.toml", "Cargo.lock", "LICENSE", "NOTICE", "README.md", "src/**", "schema/**", "tests/**", "docs/**"]
+repository = "https://github.com/hathq/ihat-identity-assertion-contracts"
+documentation = "https://docs.rs/ihat-identity-assertion-contracts"
+readme = "README.md"
+keywords = ["identity", "assertion", "authentication"]
+categories = ["authentication"]
 name = "ihat-identity-assertion-contracts"
 version = "0.10.0"
 edition = "2024"
 rust-version = "1.97"
 description = "Closed device identity assertion contracts shared by iHAT consumers"
 license = "Apache-2.0"
-publish = ["ecosystem-private"]
+publish = ["crates-io"]
 autotests = false
 
 [workspace]

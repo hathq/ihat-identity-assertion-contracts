@@ -11,15 +11,19 @@ Verify a short-lived device identity assertion against an explicitly pinned issu
 
 The consumer supplies trusted time and keys. An assertion is not a credential export or permission grant.
 
-Package distribution is not activated by this documentation. Use the checked-in source and the declared dependency versions; published availability must be verified separately.
+This is the iHAT device identity and authority wire contract, not a general-purpose identity provider. It includes iHAT account, device, session, recovery and revocation schemas. Consumers provide trusted time and pinned keys; no account database or credential export is included.
 
-## Getting started
+## Package availability and verification
 
-Install Rust 1.97 or newer and make the declared dependencies available. Use the configured private registry when a dependency is not distributed publicly. Run from this repository:
+This is a reviewed distribution candidate; enabling crates.io in the manifest does not mean the version has been published. Verify registry availability before using the exact version. Rust 1.97 or newer is required. All dependencies must resolve from crates.io.
 
 ```sh
-cargo test --locked
+cargo test --locked --all-targets
+cargo test --locked --doc
+cargo package --locked
 ```
+
+Conformance fixtures contain checked synthetic contexts and deterministic sequential-byte signing seeds. These public test-only values must never be used for operational signing or authentication.
 
 ## Documentation and source
 
