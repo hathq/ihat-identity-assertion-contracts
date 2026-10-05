@@ -85,7 +85,7 @@ jobs:
         run: |
           python3 .github/scripts/check-crate-release.py verify "$RUNNER_TEMP/package-release"
           cargo +1.97.1 publish --dry-run --locked --no-verify --registry crates-io
-          cmp target/package/ihat-identity-assertion-contracts-0.10.0.crate "$RUNNER_TEMP/package-release/ihat-identity-assertion-contracts-0.10.0.crate"
+          cmp target/package/tmp-crate/ihat-identity-assertion-contracts-0.10.0.crate "$RUNNER_TEMP/package-release/ihat-identity-assertion-contracts-0.10.0.crate"
       - name: First publication with this repository's temporary token
         if: inputs.mode == 'bootstrap'
         env:
