@@ -3,10 +3,8 @@ use ihat_identity_assertion_contracts::*;
 use serde_json::Value;
 
 pub fn fixture() -> Value {
-    serde_json::from_str(include_str!(
-        "fixtures/wire-v1-fixture.json"
-    ))
-    .expect("authoritative wire fixture")
+    serde_json::from_str(include_str!("fixtures/wire-v1-fixture.json"))
+        .expect("authoritative wire fixture")
 }
 
 pub fn signed_uv(now: u64) -> (FreshUvV1, SigningKey) {
